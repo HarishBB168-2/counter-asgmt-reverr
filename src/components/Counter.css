@@ -1,0 +1,66 @@
+.cContainer {
+  border: 1px solid #023e8a;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+  font-size: 2rem;
+  margin: 10px;
+  background: #caf0f8;
+}
+
+.cDeleteBtn {
+  align-self: flex-end;
+  padding: 3px 10px;
+  width: fit-content;
+  border-radius: 4px;
+  border: none;
+  background: #74c69d;
+  color: #1b4332;
+  cursor: pointer;
+}
+
+.cValue {
+  padding: 10px 10px;
+  text-align: center;
+}
+
+.cButtons {
+  margin: 10px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.cButtons .cBtn {
+  font-size: 2rem;
+}
+
+.cBtn {
+  padding: 10px 13px;
+  min-width: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: dodgerblue;
+  color: white;
+  border: 1px solid dodgerblue;
+}
+
+.cValueSelect {
+  display: flex;
+  gap: 10px;
+}
+
+.cValueSelect input {
+  max-width: 100px;
+}
+
+.cBtn:active {
+  background: gold;
+}
+
+.cBtn:hover,
+.cDeleteBtn:hover {
+  opacity: 80%;
+}
