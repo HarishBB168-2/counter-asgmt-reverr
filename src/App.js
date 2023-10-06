@@ -1,49 +1,45 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
 import Counter from "./components/Counter";
-import { useState } from "react";
+import "./App.css";
+import {
+  addCounter,
+  decNumber,
+  deleteCounter,
+  incNumber,
+  reset,
+  setTitle,
+  setValue,
+} from "./actions";
 
 const App = () => {
-  const [counters, setCounters] = useState([]);
+  const counters = useSelector((state) => state.counterReducer);
+  const dispatch = useDispatch();
 
   const handleCounterAdd = () => {
-    setCounters([{ title: "Tally Counter", value: 0 }, ...counters]);
+    dispatch(addCounter());
   };
 
   const handleIncrement = (index) => {
-    const newCounters = [...counters];
-    ++newCounters[index].value;
-    setCounters(newCounters);
+    dispatch(incNumber(index));
   };
   const handleDecrement = (index) => {
-    const newCounters = [...counters];
-    --newCounters[index].value;
-    setCounters(newCounters);
+    dispatch(decNumber(index));
   };
 
   const handleReset = (index) => {
-    console.log("index :>> ", index);
-    const newCounters = [...counters];
-    newCounters[index].value = 0;
-    console.log("newCounters[index] :>> ", newCounters[index]);
-    setCounters(newCounters);
+    dispatch(reset(index));
   };
 
   const handleStartValueSet = (index, value) => {
-    const newCounters = [...counters];
-    newCounters[index].value = value;
-    setCounters(newCounters);
+    dispatch(setValue(index, value));
   };
 
   const handleTitleSet = (index, title) => {
-    const newCounters = [...counters];
-    newCounters[index].title = title;
-    setCounters(newCounters);
+    dispatch(setTitle(index, title));
   };
 
   const handleDelete = (index) => {
-    const newCounters = [...counters];
-    setCounters(newCounters.filter((item, idx) => idx !== index));
+    dispatch(deleteCounter(index));
   };
 
   return (
