@@ -5,6 +5,9 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store";
+import { init } from "./services/firebaseService";
+
+init();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
